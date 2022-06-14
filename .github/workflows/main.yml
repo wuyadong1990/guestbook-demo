@@ -44,7 +44,7 @@ jobs:
         with:
           ci-owner: wuyadong1990
           ci-repository: guestbook-demo-kustomize2
-          ci-ref: refs/heads/master
+          ci-ref: refs/heads/main
           ci-user: wuyadong1990
           ci-user-token: ${{ secrets.CI_TOKEN }}
           ci-name: CI
