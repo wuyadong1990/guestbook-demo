@@ -10,11 +10,11 @@ RUN go mod download
 COPY server.go server.go
 RUN go build -o hello -race server.go
 
-FROM centos as server
-WORKDIR /root
-COPY --from=builder /go/demo/hello .
-CMD ["./hello"]
-EXPOSE 8080 8080
+#暴露端口
+EXPOSE 8080
+
+RUN chmod +x hello
+ENTRYPOINT ["./hello"]
 
 
 
