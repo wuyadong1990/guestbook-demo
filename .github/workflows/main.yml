@@ -43,7 +43,7 @@ jobs:
         uses: InformaticsMatters/trigger-ci-action@1.0.1
         with:
           ci-owner: wuyadong1990
-          ci-repository: guestbook-demo-kustomize
+          ci-repository: guestbook-demo-kustomize2
           ci-ref: refs/heads/master
           ci-user: wuyadong1990
           ci-user-token: ${{ secrets.CI_TOKEN }}
