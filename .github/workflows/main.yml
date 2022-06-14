@@ -35,17 +35,17 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: build image
         run: |
-          make image
+          docker build -t ${{ secrets.USERNAME }}/guestbook-demo:${{ github.sha }} .
           docker tag guestbook-demo:latest ${{ secrets.USERNAME }}/guestbook-demo:${{ github.sha }}
           docker push ${{ secrets.USERNAME }}/guestbook-demo:${{ github.sha }}
 
       - name: Trigger CI
         uses: InformaticsMatters/trigger-ci-action@1.0.1
         with:
-          ci-owner: pyfs
+          ci-owner: wuyadong1990
           ci-repository: guestbook-demo-kustomize
           ci-ref: refs/heads/master
-          ci-user: pyfs
+          ci-user: wuyadong1990
           ci-user-token: ${{ secrets.CI_TOKEN }}
           ci-name: CI
           ci-inputs: >-
